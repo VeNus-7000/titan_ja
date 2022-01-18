@@ -88,10 +88,11 @@
         "https://dl.dropbox.com/s/pjf5iswhy43fc1f/camera-shutter3.mp3"
       );
       se.play();
-      let c = * 0 * * 15 * 10;
+      let c = 6 * 60 * 60;
       setInterval(() => {
-        $("#min").text(Math.floor((c % 900) / 60));
-        $("#sec").text(Math.floor(c % 60) / 60));
+        $("#hour").text(Math.floor(c / 3600));
+        $("#min").text(Math.floor((c % 3600) / 60));
+        $("#sec").text(Math.floor(c % 60));
         c = c - 1;
       }, 1000);
       $("#device").text(platform.description);
